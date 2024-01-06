@@ -1,33 +1,30 @@
-# PNG-to-SVG
+This Python script seamlessly converts PNG images to SVG format using two distinct methods:
 
-The Python script transforms PNG images to SVG format through two possible methods:
+In the pixel-wise conversion, each pixel within the PNG image transforms into an independent rectangle within the SVG file.
 
-Each pixel within the PNG image finds representation as an independent rectangle in the SVG file; this process is known as pixel-wise conversion.
+For the contiguous conversion, adjacent pixels of the same color in the PNG image unite, forming filled shapes in the SVG file.
 
-In contiguous conversion, adjacent pixels of the same color in the PNG image group together and represent as filled shapes within the SVG file.
+The script strategically utilizes the Python Imaging Library (PIL) for efficient image data manipulation. It navigates command-line argument intricacies with the OptionParser module, tailor-made for such tasks. Additionally, in the realm of string manipulation, it deftly employs the io module. To perform an array of operations on tuples, the script turns to the operator module as a key resource.
 
-The script: it engages the Python Imaging Library (PIL) for image data manipulation and employs the OptionParser module--specifically designed for command-line argument parsing. Additionally, through its functionality in string manipulation; it leverages use of the io module. Furthermore - to execute diverse operations on tuples - this script relies upon one key resource: the operator module.
+Main functions:
 
-Here's a breakdown of the main functions:
+add_tuples: Summons the sum of corresponding elements from two tuples.
 
-add_tuples: Adds corresponding elements of two tuples.
+calculate_direction: Orchestrates the computation of the direction vector between two points.
 
-calculate_direction: Calculates the direction vector between two points.
+normalize_vector: Ensures the balance by normalizing a vector to possess a unit magnitude.
 
-normalize_vector: Normalizes a vector to have unit magnitude.
+create_svg_header: Takes on the role of an architect, crafting the header for an SVG file with specified width and height.
 
-create_svg_header: Generates the header for an SVG file with specified width and height.
+convert_rgba_image_to_svg_pixels: Transforms a PNG image into SVG pixel by pixel.
 
-convert_rgba_image_to_svg_pixels: Converts a PNG image to SVG pixel-wise.
+find_joined_edges: Acts as a detective, uncovering connected edges within a set of assorted edges.
 
-find_joined_edges: Finds connected edges in a set of assorted edges.
+convert_rgba_image_to_svg_contiguous: Shapes a PNG image into SVG, creating contiguous color regions.
 
-convert_rgba_image_to_svg_contiguous: Converts a PNG image to SVG with contiguous color regions.
+The pivotal function, 'png_to_svg,' takes the stage: opening a PNG file, converting it to RGBA format, and then summoning the appropriate conversion function based on designated options.
 
-The 'png_to_svg' serves as the primary function: it opens a PNG file; subsequently, it converts this file to RGBA format--finally calling upon the appropriate conversion function according to designated options.
+The script also incorporates a segment for deftly handling command-line options using OptionParser.
 
-The script also contains a section for handling command-line options using OptionParser.
+To use the code, the raster PNG image should be in the same directory.
 
-When the script executes directly, identified by (__name__ == "__main__"), it undertakes a specific task: either converts all PNG files in the current directory or those designated as command-line arguments into SVG.
-
-This script: a versatile tool for converting PNG images into SVG format, offers several options--pixel-wise or contiguous representations.
