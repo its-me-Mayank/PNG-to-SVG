@@ -1,3 +1,8 @@
+"""
+Author: Mayank Sharma
+Description: PNG-to-SVG conversion script with pixel-wise and contiguous methods using PIL and OptionParser.
+"""
+
 import sys
 import os
 from collections import deque
